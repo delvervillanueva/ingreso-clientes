@@ -1,0 +1,7 @@
+<header class="sc-page-header">
+  @if (iconSrc()) {
+    <img class="sc-page-header__icon" [src]="iconSrc()" [alt]="iconAlt()" width="40" height="32" />
+  }
+  <h1 class="sc-page-header__title">{{ title() }}</h1>
+  <p class="sc-page-header__description">{{ description() }}</p>
+</header>

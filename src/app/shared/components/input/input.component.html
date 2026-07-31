@@ -1,0 +1,20 @@
+<div class="sc-input" [class.sc-input--error]="!!errorMessage()">
+  <label class="sc-input__label" [attr.for]="id()">{{ label() }}</label>
+  <input
+    class="sc-input__field"
+    [id]="id()"
+    [type]="type()"
+    [placeholder]="placeholder()"
+    [value]="value()"
+    [disabled]="disabled()"
+    [attr.autocomplete]="autocomplete()"
+    [attr.maxlength]="maxLength() ?? null"
+    [attr.aria-invalid]="!!errorMessage()"
+    [attr.aria-describedby]="errorMessage() ? id() + '-error' : null"
+    (input)="onInput($event)"
+    (blur)="onBlur()"
+  />
+  @if (errorMessage()) {
+    <p class="sc-input__error" [id]="id() + '-error'" role="alert">{{ errorMessage() }}</p>
+  }
+</div>

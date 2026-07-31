@@ -1,0 +1,13 @@
+@use './styles/tokens' as *;
+@use './styles/reset';
+
+body {
+  background-color: $color-bg;
+  color: $color-text;
+  font-family: $font-family;
+}
+
+:focus-visible {
+  outline: 2px solid $color-focus;
+  outline-offset: 2px;
+}

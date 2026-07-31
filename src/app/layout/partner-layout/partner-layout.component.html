@@ -1,0 +1,9 @@
+<div class="partner-layout">
+  <div class="partner-layout__top-bar" aria-hidden="true"></div>
+  <app-partner-header (logout)="onLogout()" />
+  <main class="partner-layout__main">
+    <div class="partner-layout__content">
+      <router-outlet />
+    </div>
+  </main>
+</div>

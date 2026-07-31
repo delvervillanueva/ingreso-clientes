@@ -1,0 +1,22 @@
+@use '../../../../styles/tokens' as *;
+
+:host {
+  display: block;
+  width: 100%;
+  max-width: $card-width;
+}
+
+// Figma Frame 1191 — form card only (title lives outside)
+.sc-card {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: $card-width;
+  padding: $spacing-350 $spacing-400;
+  gap: $spacing-07;
+  border: 1px solid $color-border-card;
+  border-radius: $radius-250;
+  background-color: $color-surface;
+  box-shadow: $shadow-card;
+}

@@ -1,0 +1,22 @@
+@use '../../../styles/tokens' as *;
+
+.partner-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: $color-bg;
+
+  &__top-bar {
+    height: 4px;
+    background-color: $color-primary;
+  }
+
+  &__main {
+    flex: 1;
+    padding: 0;
+  }
+
+  &__content {
+    width: 100%;
+  }
+}

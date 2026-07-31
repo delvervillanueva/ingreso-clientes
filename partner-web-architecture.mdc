@@ -1,0 +1,441 @@
+---
+description: Architecture and UI rules for the Banking Partner Web microfrontend
+globs: [
+  "src/app/**/*",
+  "src/styles.scss",
+  "src/assets/**/*"
+]
+alwaysApply: true
+---
+
+# Banking Partner Web Architecture Rules
+
+## 1. Purpose
+
+This repository contains the Partner Web microfrontend.
+
+Its responsibility is to provide the web interface used by Santander partners to search customers and start a banking request.
+
+This microfrontend owns only the Partner Portal experience.
+
+It must not implement onboarding logic, contracts logic, loan orchestration or business rules belonging to downstream microfrontends.
+
+---
+
+# 2. Design Philosophy
+
+The UI must prioritize:
+
+- clean banking interface
+- pixel-perfect implementation
+- responsive desktop-first layout
+- reusable UI components
+- consistent spacing
+- accessibility
+- production-ready code
+
+The provided UI mockups are the design source of truth.
+
+Cursor should reproduce the design as accurately as possible.
+
+---
+
+# 3. Desktop First
+
+This project targets desktop browsers.
+
+Desktop layout is the primary implementation.
+
+Rules
+
+- design for desktop first
+- minimum width 1280px
+- optimize for 1366px and 1920px screens
+- responsive behavior is secondary
+- avoid mobile-first assumptions
+
+---
+
+# 4. Page Ownership
+
+This repository owns pages such as:
+
+- customer search
+- customer result
+- request initialization
+- request tracking
+- dashboard
+- shared layouts
+
+Future pages must remain inside the Partner Portal domain.
+
+---
+
+# 5. Layout Structure
+
+Every page should follow the same layout hierarchy.
+
+PartnerLayout
+
+├── Header
+
+├── Main Content
+
+│      ├── Page Title
+
+│      ├── Description
+
+│      ├── Feature Container
+
+│      └── Action Area
+
+└── Footer (if required)
+
+Layout must remain consistent across the application.
+
+---
+
+# 6. Header
+
+The header must be implemented as an independent reusable component.
+
+Responsibilities
+
+- Santander logo
+- navigation menu
+- authenticated user information
+- notifications
+- logout button
+
+Header must not contain page-specific logic.
+
+---
+
+# 7. Page Composition
+
+Pages should be composed of reusable containers instead of large components.
+
+Example
+
+CustomerSearchPage
+
+├── CustomerSearchCard
+
+├── CustomerResultCard
+
+├── EmptyState
+
+├── LoadingState
+
+└── ErrorState
+
+Avoid large monolithic page components.
+
+---
+
+# 8. Component Organization
+
+Follow feature-first architecture.
+
+Example
+
+features/
+
+    customer-search/
+
+        pages/
+
+        components/
+
+        services/
+
+        models/
+
+        state/
+
+        guards/
+
+        interfaces/
+
+        utils/
+
+Shared components belong inside
+
+shared/
+
+Examples
+
+Button
+
+Input
+
+Select
+
+Card
+
+Badge
+
+Dialog
+
+Loader
+
+Empty State
+
+---
+
+# 9. Design System
+
+All UI must reuse the Santander design language.
+
+Spacing
+
+- 4
+- 8
+- 12
+- 16
+- 24
+- 32
+- 40
+- 48
+
+Border radius
+
+consistent
+
+Shadows
+
+soft
+
+Cards
+
+rounded
+
+Avoid hardcoded styles duplicated across components.
+
+---
+
+# 10. Forms
+
+Forms must use
+
+Reactive Forms
+
+Every field must have
+
+- validation
+- disabled state
+- loading state
+- error state
+
+Form logic must remain outside presentation components.
+
+---
+
+# 11. State Management
+
+Each feature owns its own reactive state.
+
+State should include
+
+- loading
+- success
+- error
+- current customer
+- search result
+- request status
+
+Avoid global mutable variables.
+
+---
+
+# 12. Services
+
+Separate responsibilities.
+
+Examples
+
+CustomerApiService
+
+BranchApiService
+
+RequestApiService
+
+PartnerApiService
+
+Do not mix unrelated endpoints in a single service.
+
+---
+
+# 13. Routing
+
+Routes must be feature-oriented.
+
+Example
+
+/customer-search
+
+/request
+
+/tracking
+
+/dashboard
+
+Avoid generic routes.
+
+---
+
+# 14. Naming
+
+Everything must be written in English.
+
+Preferred examples
+
+customer-search-page.component.ts
+
+customer-search-card.component.ts
+
+customer-api.service.ts
+
+request-state.service.ts
+
+partner-layout.component.ts
+
+Avoid Spanish names.
+
+---
+
+# 15. Styling
+
+Prefer SCSS.
+
+Follow BEM methodology.
+
+Avoid inline styles.
+
+Avoid duplicated CSS.
+
+Every component owns its own SCSS file.
+
+---
+
+# 16. Reusability
+
+If a UI block appears more than once, create a reusable component.
+
+Examples
+
+Search Card
+
+Information Card
+
+Status Card
+
+Result Card
+
+Confirmation Card
+
+Buttons
+
+Inputs
+
+Selectors
+
+---
+
+# 17. Performance
+
+Prefer
+
+OnPush change detection
+
+Signals
+
+Standalone Components
+
+Lazy-loaded features
+
+Avoid unnecessary subscriptions.
+
+---
+
+# 18. Error Handling
+
+Every feature should support
+
+Loading
+
+Empty
+
+Error
+
+Success
+
+Do not leave blank pages.
+
+---
+
+# 19. Accessibility
+
+Components should include
+
+keyboard navigation
+
+focus management
+
+ARIA labels
+
+semantic HTML
+
+---
+
+# 20. Visual Consistency
+
+Cursor must reproduce the provided mockups as closely as possible.
+
+Pay special attention to
+
+- spacing
+- alignment
+- typography
+- colors
+- shadows
+- border radius
+- card sizes
+- button proportions
+- icon placement
+- header spacing
+
+Pixel-perfect implementation is preferred over approximate layouts.
+
+---
+
+# 21. Cursor Responsibilities
+
+When generating code, Cursor should
+
+- preserve project architecture
+- keep features isolated
+- create reusable components
+- avoid duplicated logic
+- generate scalable folder structures
+- produce production-ready Angular code
+- follow Angular 20 best practices
+- use standalone components
+- use Signals where appropriate
+- keep UI modular and maintainable
+
+---
+
+# 22. Cursor Should Avoid
+
+Do not
+
+- generate giant page components
+- duplicate UI
+- mix business logic with presentation
+- hardcode layout values repeatedly
+- couple independent features
+- create generic service names
+- use inline CSS
+- create unnecessary wrappers
+- generate temporary demo code

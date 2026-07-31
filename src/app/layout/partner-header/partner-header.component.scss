@@ -1,0 +1,110 @@
+@use '../../../styles/tokens' as *;
+
+.partner-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid $color-header-border;
+  background-color: $color-surface;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: $header-height;
+    padding: 0 $spacing-40;
+  }
+
+  &__brand {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  &__logo {
+    width: 170px;
+    height: auto;
+  }
+
+  &__nav {
+    display: flex;
+    align-items: center;
+    gap: $spacing-24;
+  }
+
+  &__nav-item {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-8;
+    color: $color-text;
+    font-size: 14px;
+    font-weight: 500;
+    transition: color 0.15s ease;
+
+    &:hover {
+      color: $color-primary;
+    }
+
+    &--active {
+      color: $color-primary;
+      font-weight: 600;
+    }
+  }
+
+  &__icon {
+    flex-shrink: 0;
+  }
+
+  &__icon-wrap {
+    position: relative;
+    display: inline-flex;
+  }
+
+  &__badge {
+    position: absolute;
+    top: -7px;
+    right: -9px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 16px;
+    height: 16px;
+    padding: 0 4px;
+    border-radius: 999px;
+    background-color: $color-primary;
+    color: $color-surface;
+    font-size: 10px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  &__user {
+    display: inline-flex;
+    align-items: center;
+    gap: $spacing-8;
+    margin-left: $spacing-8;
+  }
+
+  &__avatar {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background-color: $color-teal-dark;
+    color: $color-surface;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.3px;
+  }
+
+  &__user-name {
+    max-width: 140px;
+    overflow: hidden;
+    color: $color-text;
+    font-size: 14px;
+    font-weight: 500;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+}

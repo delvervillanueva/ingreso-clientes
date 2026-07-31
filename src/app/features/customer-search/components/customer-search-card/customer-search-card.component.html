@@ -1,0 +1,53 @@
+<form class="customer-search-card" [formGroup]="form" (ngSubmit)="onSubmit()" novalidate>
+  <app-card ariaLabel="Formulario de búsqueda de cliente">
+    <std-input
+      html-id="customer-dni"
+      name="dni"
+      label="DNI"
+      placeholder="Ej. 22004400"
+      type="text"
+      [value]="form.controls.dni.value"
+      [maxlength]="8"
+      [status]="dniError() ? 'error' : 'default'"
+      [helperText]="dniError() || ''"
+      [disabled]="loading()"
+      (changeEvent)="onDniChange($event)"
+      (blurEvent)="onDniBlur()"
+    ></std-input>
+
+    <std-select
+      #branchSelect
+      label="Sucursal"
+      placeholder="Selecciona una sucursal"
+      [selectedOption]="selectedBranchLabel()"
+      [status]="branchError() ? 'error' : 'default'"
+      [helperText]="branchError() || ''"
+      [disabled]="loading()"
+      (selectionChanged)="onBranchSelectionChanged($event)"
+    >
+      <std-option-list
+        [items]="branchListItems()"
+        (itemClicked)="onBranchItemClicked($event, branchSelect)"
+      ></std-option-list>
+    </std-select>
+
+    <std-button
+      label="Buscar cliente"
+      type="primary"
+      size="l"
+      classes="w-full"
+      [disabled]="loading()"
+      [loading]="loading()"
+      (clickEvent)="onSubmit()"
+    ></std-button>
+
+    <div class="customer-search-card__reset">
+      <std-link
+        label="Nueva búsqueda"
+        type="default"
+        cursor="pointer"
+        (clickEvent)="onReset()"
+      ></std-link>
+    </div>
+  </app-card>
+</form>

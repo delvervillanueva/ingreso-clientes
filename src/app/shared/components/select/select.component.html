@@ -1,0 +1,28 @@
+<div class="sc-select" [class.sc-select--error]="!!errorMessage()">
+  <label class="sc-select__label" [attr.for]="id()">{{ label() }}</label>
+  <div class="sc-select__control">
+    <select
+      class="sc-select__field"
+      [id]="id()"
+      [value]="value()"
+      [disabled]="disabled()"
+      [attr.aria-invalid]="!!errorMessage()"
+      [attr.aria-describedby]="errorMessage() ? id() + '-error' : null"
+      (change)="onSelect($event)"
+      (blur)="onBlur()"
+    >
+      <option value="" disabled>{{ placeholder() }}</option>
+      @for (option of options(); track option.value) {
+        <option [value]="option.value">{{ option.label }}</option>
+      }
+    </select>
+    <span class="sc-select__chevron" aria-hidden="true">
+      <svg width="12" height="8" viewBox="0 0 12 8" fill="none">
+        <path d="M1 1.5L6 6.5L11 1.5" stroke="#666666" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </span>
+  </div>
+  @if (errorMessage()) {
+    <p class="sc-select__error" [id]="id() + '-error'" role="alert">{{ errorMessage() }}</p>
+  }
+</div>

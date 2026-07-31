@@ -1,0 +1,14 @@
+<section class="customer-search-page">
+  <app-page-header
+    title="Buscar cliente"
+    description="Ingresa el DNI del cliente para verificar si tiene un crédito aprobado."
+    iconSrc="assets/icons/id-card.svg"
+    iconAlt=""
+  />
+
+  <app-customer-search-card
+    [loading]="loading()"
+    (search)="onSearch($event)"
+    (resetSearch)="onResetSearch()"
+  />
+</section>

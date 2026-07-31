@@ -1,0 +1,12 @@
+@use '../../../../../styles/tokens' as *;
+
+.customer-search-card {
+  width: 100%;
+  max-width: $card-width;
+
+  &__reset {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+}

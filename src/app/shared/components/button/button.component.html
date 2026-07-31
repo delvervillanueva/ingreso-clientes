@@ -1,0 +1,13 @@
+<button
+  class="sc-button"
+  [class.sc-button--primary]="variant() === 'primary'"
+  [class.sc-button--secondary]="variant() === 'secondary'"
+  [class.sc-button--outline]="variant() === 'outline'"
+  [class.sc-button--full]="fullWidth()"
+  [attr.type]="type()"
+  [disabled]="disabled()"
+  [attr.aria-label]="ariaLabel() || label()"
+  (click)="onClick()"
+>
+  {{ label() }}
+</button>

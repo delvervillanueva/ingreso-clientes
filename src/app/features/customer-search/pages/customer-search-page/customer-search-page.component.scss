@@ -1,0 +1,12 @@
+@use '../../../../../styles/tokens' as *;
+
+// Figma outer container: 448 × 712, offset 260px, top/bottom 84px (artboard 1440)
+.customer-search-page {
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  width: $card-width;
+  min-height: $page-container-height;
+  margin: $page-offset-top 0 $page-offset-bottom $page-offset-left;
+  gap: $spacing-32;
+}

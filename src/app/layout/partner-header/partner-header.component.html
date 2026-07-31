@@ -1,0 +1,59 @@
+<header class="partner-header">
+  <div class="partner-header__inner">
+    <a class="partner-header__brand" routerLink="/customer-search" aria-label="Santander Consumer">
+      <img
+        class="partner-header__logo"
+        src="assets/images/logo-santander-consumer.svg"
+        alt="Santander Consumer"
+        width="170"
+        height="44"
+      />
+    </a>
+
+    <nav class="partner-header__nav" aria-label="Navegación principal">
+      <a
+        class="partner-header__nav-item"
+        routerLink="/customer-search"
+        routerLinkActive="partner-header__nav-item--active"
+        aria-label="Búsqueda"
+      >
+        <svg class="partner-header__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+          <circle cx="8" cy="8" r="5.5" stroke="currentColor" stroke-width="1.7"/>
+          <path d="M12.2 12.2L16 16" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/>
+        </svg>
+        <span>Búsqueda</span>
+      </a>
+
+      <a
+        class="partner-header__nav-item"
+        routerLink="/requests"
+        routerLinkActive="partner-header__nav-item--active"
+        aria-label="Solicitudes"
+      >
+        <span class="partner-header__icon-wrap">
+          <svg class="partner-header__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
+            <path d="M5 2.5h6.5L14.5 5.5V15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M11.5 2.5V5.5H14.5" stroke="currentColor" stroke-width="1.5"/>
+            <path d="M6.5 9h5M6.5 12h3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          </svg>
+          <span class="partner-header__badge" [attr.aria-label]="requestsCount() + ' solicitudes pendientes'">
+            {{ requestsCount() }}
+          </span>
+        </span>
+        <span>Solicitudes</span>
+      </a>
+
+      <div class="partner-header__user" aria-label="Usuario autenticado">
+        <span class="partner-header__avatar" aria-hidden="true">{{ userInitials() }}</span>
+        <span class="partner-header__user-name">{{ userName() }}</span>
+      </div>
+
+      <std-button
+        label="Cerrar sesión"
+        type="secondary"
+        size="s"
+        (clickEvent)="onLogout()"
+      ></std-button>
+    </nav>
+  </div>
+</header>
