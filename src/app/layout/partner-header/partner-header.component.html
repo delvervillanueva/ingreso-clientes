@@ -31,11 +31,14 @@
         aria-label="Solicitudes"
       >
         <span class="partner-header__icon-wrap">
-          <svg class="partner-header__icon" width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true">
-            <path d="M5 2.5h6.5L14.5 5.5V15a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V3.5a1 1 0 0 1 1-1Z" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M11.5 2.5V5.5H14.5" stroke="currentColor" stroke-width="1.5"/>
-            <path d="M6.5 9h5M6.5 12h3.5" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-          </svg>
+          <img
+            class="partner-header__icon"
+            src="assets/images/Icon.svg"
+            width="20"
+            height="16"
+            alt=""
+            aria-hidden="true"
+          />
           <span class="partner-header__badge" [attr.aria-label]="requestsCount() + ' solicitudes pendientes'">
             {{ requestsCount() }}
           </span>
