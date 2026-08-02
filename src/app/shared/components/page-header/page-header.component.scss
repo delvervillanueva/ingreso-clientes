@@ -26,6 +26,8 @@
   }
 
   &__description {
+    width: 100%;
+    max-width: $page-description-width;
     color: $color-text-secondary;
     font-size: 14px;
     font-weight: 400;

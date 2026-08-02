@@ -13,8 +13,8 @@
   box-sizing: border-box;
   width: 100%;
   max-width: $card-width;
-  padding: $spacing-350 $spacing-400;
-  gap: $spacing-07;
+  padding: $card-padding-vertical $card-padding-horizontal;
+  gap: $spacing-350;
   border: 1px solid $color-border-card;
   border-radius: $radius-250;
   background-color: $color-surface;

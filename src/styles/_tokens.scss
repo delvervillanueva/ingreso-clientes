@@ -28,9 +28,12 @@ $spacing-40: 40px;
 $spacing-48: 48px;
 
 // Figma Frame 1191 tokens
-$spacing-350: 20px; // Spacing/350 — padding top/bottom
-$spacing-400: 24px; // Spacing/400 — padding left/right
-$spacing-07: 32px; // size/spacing-07 — gap between card children
+$spacing-350: 20px; // Gap between the form controls
+$spacing-400: 24px;
+$spacing-07: 32px;
+$card-padding-vertical: 32px;
+// The card has a 1px border: 39px padding + 1px border = 40px inset per side.
+$card-padding-horizontal: 39px;
 
 $radius-sm: 8px;
 $radius-md: 12px;
@@ -48,6 +51,7 @@ $min-width: 1280px;
 $header-height: 72px;
 $content-max-width: 960px;
 $card-width: 448px; // form card + page column width
+$page-description-width: 408px; // Figma text box inside the 448px page column
 $page-container-height: 712px; // Figma outer container
 $page-offset-left: 260px; // Figma left margin (1440 artboard)
 $page-offset-top: 84px; // Figma top margin under header
