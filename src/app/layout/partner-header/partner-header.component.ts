@@ -13,7 +13,7 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 export class PartnerHeaderComponent {
   readonly userName = input('Laura Alexandra...');
   readonly userInitials = input('LD');
-  readonly requestsCount = input(0);
+  readonly requestsCount = input(9);
 
   readonly logout = output<void>();
 

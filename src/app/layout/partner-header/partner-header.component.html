@@ -25,7 +25,7 @@
       </a>
 
       <a
-        class="partner-header__nav-item"
+        class="partner-header__nav-item partner-header__nav-item--requests"
         routerLink="/requests"
         routerLinkActive="partner-header__nav-item--active"
         aria-label="Solicitudes"
@@ -34,8 +34,8 @@
           <img
             class="partner-header__icon"
             src="assets/images/Icon.svg"
-            width="20"
-            height="16"
+            width="28"
+            height="22"
             alt=""
             aria-hidden="true"
           />
@@ -43,7 +43,7 @@
             {{ requestsCount() }}
           </span>
         </span>
-        <span>Solicitudes</span>
+        <span class="partner-header__requests-label">Solicitudes</span>
       </a>
 
       <div class="partner-header__user" aria-label="Usuario autenticado">

@@ -10,11 +10,11 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  gap: $spacing-8;
 
   &__icon {
     width: 40px;
     height: 32px;
+    margin-bottom: $spacing-40;
   }
 
   &__title {
@@ -23,14 +23,15 @@
     font-weight: 700;
     line-height: 1.2;
     letter-spacing: -0.2px;
+    margin-bottom: $spacing-16;
   }
 
   &__description {
     width: 100%;
-    max-width: $page-description-width;
+    max-width: $card-width;
     color: $color-text-secondary;
-    font-size: 14px;
+    font-size: 18px;
     font-weight: 400;
-    line-height: 1.45;
+    line-height: 24px;
   }
 }
