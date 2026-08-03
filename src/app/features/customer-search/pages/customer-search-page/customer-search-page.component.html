@@ -11,4 +11,8 @@
     (search)="onSearch($event)"
     (resetSearch)="onResetSearch()"
   />
+
+  @if (searchResult()?.found && searchResult()?.creditApproved) {
+    <app-customer-result-card [customerName]="searchResult()?.customerName ?? 'Carlos G.'" />
+  }
 </section>

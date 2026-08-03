@@ -2,11 +2,30 @@
 
 // Figma outer container: 448 × 712, offset 260px, top/bottom 84px (artboard 1440)
 .customer-search-page {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, $card-width);
+  grid-template-rows: auto 1fr;
   box-sizing: border-box;
-  width: $card-width;
+  width: calc(#{$card-width} * 2 + #{$spacing-24});
   min-height: $page-container-height;
   margin: $page-offset-top 0 $page-offset-bottom $page-offset-left;
-  gap: $spacing-40;
+  column-gap: $spacing-24;
+  row-gap: $spacing-40;
+
+  app-page-header {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  app-customer-search-card {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: start;
+  }
+
+  app-customer-result-card {
+    grid-column: 2;
+    grid-row: 2;
+    align-self: start;
+  }
 }

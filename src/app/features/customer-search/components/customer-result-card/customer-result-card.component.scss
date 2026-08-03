@@ -1,0 +1,81 @@
+@use '../../../../../styles/tokens' as *;
+
+:host {
+  display: block;
+  width: $card-width;
+}
+
+.customer-result-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-sizing: border-box;
+  width: $card-width;
+  height: 300px;
+  padding: 50px 32px 32px;
+  border: 1px solid $color-border-card;
+  border-radius: $radius-md;
+  background: $color-surface;
+
+  &__status {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #00843d;
+    color: $color-surface;
+  }
+
+  &__title {
+    color: $color-text;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 24px;
+  }
+
+  &__message {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 80px;
+    margin-top: 24px;
+    border-radius: $radius-lg;
+    background: #f4f8fa;
+    color: #1379a5;
+    font-size: 16px;
+    line-height: 24px;
+    text-align: center;
+  }
+
+  &__action {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+    height: 48px;
+    margin-top: 24px;
+    border: 1px solid $color-primary;
+    border-radius: $radius-pill;
+    background: $color-surface;
+    color: $color-primary;
+    font: inherit;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+
+    span {
+      font-size: 24px;
+      font-weight: 400;
+      line-height: 1;
+    }
+  }
+}

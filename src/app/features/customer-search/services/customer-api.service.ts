@@ -12,7 +12,7 @@ export class CustomerApiService {
 
     return of({
       found,
-      customerName: found ? 'Cliente de prueba' : undefined,
+      customerName: found ? 'Carlos G.' : undefined,
       creditApproved: found,
     }).pipe(delay(400));
   }
