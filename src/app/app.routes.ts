@@ -25,6 +25,13 @@ export const routes: Routes = [
             (m) => m.RequestsPageComponent,
           ),
       },
+      {
+        path: 'transaction-request',
+        loadComponent: () =>
+          import('./features/transaction-request/pages/transaction-request-page/transaction-request-page.component').then(
+            (m) => m.TransactionRequestPageComponent,
+          ),
+      },
     ],
   },
   {

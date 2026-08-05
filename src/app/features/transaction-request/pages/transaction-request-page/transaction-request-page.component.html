@@ -1,0 +1,45 @@
+<section class="transaction-request-page">
+  <app-page-header
+    title="Solicitud de transacción"
+    description="Ingresa el monto final de la transacción para enviar la solicitud."
+    iconSrc="assets/images/transaction-request.svg"
+    iconAlt=""
+  />
+
+  <div class="transaction-request-page__form-column">
+    <form class="transaction-request-card" (ngSubmit)="onSubmit()" novalidate>
+      <span class="transaction-request-card__status" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="m5 10.5 3 3 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+
+      <h2 class="transaction-request-card__customer">
+        <strong>Cliente:</strong> {{ customerName() }}
+      </h2>
+
+      <label class="transaction-request-card__label" for="transaction-amount">
+        Monto de la transacción
+      </label>
+      <div class="transaction-request-card__input-wrap">
+        <span aria-hidden="true">S/</span>
+        <input
+          id="transaction-amount"
+          type="text"
+          inputmode="decimal"
+          autocomplete="off"
+          [formControl]="amount"
+          [attr.aria-invalid]="submitted() && amount.invalid"
+          aria-describedby="transaction-amount-help"
+        />
+      </div>
+
+      <p id="transaction-amount-help" class="transaction-request-card__help">
+        Confirma con el cliente el monto final de la transacción<br />
+        antes de enviar la solicitud.
+      </p>
+
+      <button class="transaction-request-card__submit" type="submit">Enviar solicitud</button>
+    </form>
+  </div>
+</section>
