@@ -32,6 +32,13 @@ export const routes: Routes = [
             (m) => m.TransactionRequestPageComponent,
           ),
       },
+      {
+        path: 'transaction-sent',
+        loadComponent: () =>
+          import('./features/transaction-request/pages/transaction-sent-page/transaction-sent-page.component').then(
+            (m) => m.TransactionSentPageComponent,
+          ),
+      },
     ],
   },
   {

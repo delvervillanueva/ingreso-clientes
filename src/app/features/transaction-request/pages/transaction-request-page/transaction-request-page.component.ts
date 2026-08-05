@@ -1,5 +1,6 @@
-import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
+import { ChangeDetectionStrategy, Component, inject, signal } from '@angular/core';
 import { FormControl, ReactiveFormsModule, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { PageHeaderComponent } from '../../../../shared/components/page-header/page-header.component';
 
 @Component({
@@ -11,6 +12,8 @@ import { PageHeaderComponent } from '../../../../shared/components/page-header/p
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class TransactionRequestPageComponent {
+  private readonly router = inject(Router);
+
   readonly customerName = signal('Carlos G.');
   readonly amount = new FormControl('', {
     nonNullable: true,
@@ -25,5 +28,9 @@ export class TransactionRequestPageComponent {
     if (this.amount.invalid) {
       return;
     }
+
+    void this.router.navigate(['/transaction-sent'], {
+      queryParams: { amount: this.amount.value },
+    });
   }
 }

@@ -1,0 +1,58 @@
+<section class="transaction-sent-page">
+  <div class="transaction-sent-page__instructions">
+    <img src="assets/images/request-sent.svg" width="40" height="40" alt="" />
+
+    <h1>Solicitud enviada al cliente</h1>
+
+    <p class="transaction-sent-page__continue">Para continuar:</p>
+
+    <ol class="transaction-sent-page__steps">
+      <li>
+        <span>1</span>
+        <p>Indica al cliente que apruebe la solicitud desde el<br /><strong>correo enviado por Santander Consumer.</strong></p>
+      </li>
+      <li>
+        <span>2</span>
+        <p>Espera la respuesta del cliente para continuar. No<br />cierres esta ventana.</p>
+      </li>
+    </ol>
+
+    <div class="transaction-sent-page__notice">
+      <span aria-hidden="true">i</span>
+      <p>Cuando el cliente complete el proceso, <strong>revisa la sección<br />Solicitudes para consultar el estado de la operación.</strong></p>
+    </div>
+  </div>
+
+  <div class="transaction-summary">
+    <article class="transaction-summary__card">
+      <span class="transaction-summary__status" aria-hidden="true">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+          <path d="m5 10.5 3 3 7-7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+      </span>
+
+      <h2><strong>Cliente:</strong> {{ customerName }}</h2>
+
+      <section class="transaction-summary__amount">
+        <h3>Monto de la transacción</h3>
+        <p>
+          <span>S/</span><strong>{{ amountParts().whole }}</strong><small>.{{ amountParts().decimals }}</small>
+        </p>
+      </section>
+
+      <section class="transaction-summary__details">
+        <h3>Detalles de la solicitud</h3>
+        <dl>
+          <div>
+            <dt>Comercio aliado</dt>
+            <dd>{{ branchName }}</dd>
+          </div>
+          <div>
+            <dt>Fecha de solicitud</dt>
+            <dd>{{ requestDate }}</dd>
+          </div>
+        </dl>
+      </section>
+    </article>
+  </div>
+</section>

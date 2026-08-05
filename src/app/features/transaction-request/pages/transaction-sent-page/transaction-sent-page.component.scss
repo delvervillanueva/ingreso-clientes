@@ -1,0 +1,222 @@
+@use '../../../../../styles/tokens' as *;
+
+.transaction-sent-page {
+  display: grid;
+  grid-template-columns: repeat(2, 440px);
+  align-items: start;
+  box-sizing: border-box;
+  width: 920px;
+  height: 486px;
+  margin: $page-offset-top 0 0 $page-offset-left;
+  column-gap: $spacing-40;
+
+  &__instructions {
+    display: flex;
+    flex-direction: column;
+    width: 440px;
+    height: 376px;
+
+    h1 {
+      margin-top: $spacing-40;
+      color: $color-text;
+      font-size: 28px;
+      font-weight: 700;
+      line-height: 34px;
+    }
+  }
+
+  &__continue {
+    margin-top: $spacing-24;
+    color: $color-text;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  &__steps {
+    display: flex;
+    flex-direction: column;
+    gap: $spacing-8;
+    margin: $spacing-16 0 0;
+    padding: 0;
+    list-style: none;
+
+    li {
+      display: flex;
+      align-items: flex-start;
+      gap: $spacing-12;
+      min-height: 48px;
+
+      > span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 24px;
+        height: 24px;
+        flex: 0 0 24px;
+        border-radius: 50%;
+        background: #287fa6;
+        color: $color-surface;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      p {
+        color: $color-text;
+        font-size: 14px;
+        line-height: 24px;
+      }
+    }
+  }
+
+  &__notice {
+    display: flex;
+    align-items: center;
+    gap: $spacing-12;
+    width: 440px;
+    height: 72px;
+    margin-top: $spacing-24;
+    padding: 12px 16px;
+    border-radius: $radius-sm;
+    background: #dcecf3;
+
+    > span {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 20px;
+      height: 20px;
+      flex: 0 0 20px;
+      border: 1px solid #287fa6;
+      border-radius: 50%;
+      color: #287fa6;
+      font-size: 12px;
+    }
+
+    p {
+      color: $color-text;
+      font-size: 12px;
+      line-height: 18px;
+    }
+  }
+}
+
+.transaction-summary {
+  box-sizing: border-box;
+  width: 440px;
+  height: 486px;
+  padding-top: 20px;
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-sizing: border-box;
+    width: 440px;
+    height: 466px;
+    padding: 50px 32px 32px;
+    border: 1px solid $color-border-card;
+    border-radius: $radius-md;
+    background: $color-surface;
+
+    > h2 {
+      color: $color-text;
+      font-size: 18px;
+      font-weight: 400;
+      line-height: 24px;
+    }
+  }
+
+  &__status {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    transform: translateX(-50%);
+    border-radius: 50%;
+    background: #00843d;
+    color: $color-surface;
+  }
+
+  &__amount {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 376px;
+    height: 118px;
+    margin-top: $spacing-24;
+    border-radius: $radius-sm;
+    background: #f5f9fb;
+    color: #287fa6;
+
+    h3 {
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 20px;
+    }
+
+    p {
+      display: flex;
+      align-items: baseline;
+      margin-top: 4px;
+
+      span {
+        margin-right: 4px;
+        font-size: 18px;
+        font-weight: 700;
+      }
+
+      strong {
+        font-size: 48px;
+        line-height: 52px;
+      }
+
+      small {
+        font-size: 18px;
+        font-weight: 700;
+      }
+    }
+  }
+
+  &__details {
+    box-sizing: border-box;
+    width: 376px;
+    height: 196px;
+    margin-top: $spacing-24;
+    padding: $spacing-24;
+    border: 1px solid $color-border-card;
+    border-radius: $radius-lg;
+    background: $color-surface;
+
+    h3 {
+      color: $color-text;
+      font-size: 16px;
+      line-height: 24px;
+    }
+
+    dl {
+      display: flex;
+      flex-direction: column;
+      gap: $spacing-16;
+      margin: $spacing-16 0 0;
+    }
+
+    dt {
+      color: $color-text-secondary;
+      font-size: 12px;
+      line-height: 16px;
+    }
+
+    dd {
+      margin: 4px 0 0;
+      color: $color-text;
+      font-size: 14px;
+      line-height: 20px;
+    }
+  }
+}
